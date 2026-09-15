@@ -6,7 +6,7 @@
 /*   By: yueli <yueli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/11 15:37:02 by yueli             #+#    #+#             */
-/*   Updated: 2026/09/11 19:11:03 by yueli            ###   ########.fr       */
+/*   Updated: 2026/09/12 14:20:40 by yueli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,30 +62,36 @@ Character::~Character()
 }
 
 //feature
-std::string Character::const &getName() const
+std::string const &Character::getName() const
 {
     return (name);
 }
 
 void    Character::equip(AMateria *m)
 {
-    for (int i = 0; i < 4; i++)
+    if (!m)
+        return ;
+    int i = 0;
+    while (i < 4)
     {
         if (!inventory[i])
             break ;
+        i++;
     }
-    if (i == 3)
+    if (i == 4)
         return ;
-    
-
+    else
+        inventory[i] = m;
 }
 
 void    Character::unequip(int idx)
 {
-
+    if (0 <= idx && idx < 4 && inventory[idx])
+        inventory[idx] = NULL;
 }
 
 void    Character::use(int idx, ICharacter &target)
 {
-
+    if (0 <= idx && idx < 4 && inventory[idx])
+        inventory[idx]->use(target);
 }

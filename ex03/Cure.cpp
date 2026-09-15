@@ -6,15 +6,16 @@
 /*   By: yueli <yueli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/11 15:35:22 by yueli             #+#    #+#             */
-/*   Updated: 2026/09/11 15:36:37 by yueli            ###   ########.fr       */
+/*   Updated: 2026/09/13 18:38:43 by yueli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 #include <iostream>
 
-Cure::Cure() : AMateria("Cure")
+Cure::Cure() : AMateria("cure")
 {
     std::cout << "Cure constructor called" << std::endl;
 }
@@ -42,7 +43,8 @@ AMateria    *Cure::clone() const
     return (new Cure(*this));
 }
 
-void    Cure::use(ICharacter &type)
+void    Cure::use(ICharacter &target)
 {
-
+    std::cout << "* heals " << target.getName()
+            << "'s wounds *" << std::endl;
 }

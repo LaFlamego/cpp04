@@ -6,7 +6,7 @@
 /*   By: yueli <yueli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 13:04:13 by yueli             #+#    #+#             */
-/*   Updated: 2026/09/09 13:08:45 by yueli            ###   ########.fr       */
+/*   Updated: 2026/09/12 14:24:38 by yueli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
     ~Ice();
 
     AMateria    *clone() const;
-    void        use(ICharacter &type);
+    void        use(ICharacter &target);
 
 };
 

@@ -6,12 +6,15 @@
 /*   By: yueli <yueli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/11 15:36:53 by yueli             #+#    #+#             */
-/*   Updated: 2026/09/11 17:17:16 by yueli            ###   ########.fr       */
+/*   Updated: 2026/09/12 13:36:03 by yueli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _CHARACTER_HPP_
 # define _CHARACTER_HPP_
+
+# include "ICharacter.hpp"
+//class ICharacter;
 
 class   Character : public ICharacter
 {
